@@ -1,23 +1,25 @@
 package sk.uniza.trafficcounterdemo;
 
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class TrafficCounterViewModel extends ViewModel {
     // No. of cars going in up lane
-    public Integer carUp = 0;
+    public MutableLiveData<Integer> carUp = new MutableLiveData(0);
 
     // No. of vans going in up lane
-    public Integer vanUp = 0;
+    public MutableLiveData<Integer> vanUp = new MutableLiveData(0);
 
     // No. of trucks going in up lane
-    public Integer truckUp = 0;
+    public MutableLiveData<Integer> truckUp = new MutableLiveData(0);
 
     // No. of cars going in down lane
-    public Integer carDown = 0;
+    public MutableLiveData<Integer> carDown = new MutableLiveData(0);
 
     // No. of vans going in down lane
-    public Integer vanDown = 0;
+    public MutableLiveData<Integer> vanDown = new MutableLiveData(0);
 
     // No. of trucks going in down lane
-    public Integer truckDown = 0;
+    public MutableLiveData<Integer> truckDown = new MutableLiveData(0);
+
 }
