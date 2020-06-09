@@ -7,6 +7,8 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.view.View;
 import android.view.Menu;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView laneDownCat1;
     private TextView laneDownCat2;
     private TextView laneDownCat3;
+    private TrafficCounterViewModel trafficCounterViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
         laneDownCat1 = findViewById(R.id.laneDownCat1);
         laneDownCat2 = findViewById(R.id.laneDownCat2);
         laneDownCat3 = findViewById(R.id.laneDownCat3);
+        trafficCounterViewModel =
+                new ViewModelProvider(this)
+                .get(TrafficCounterViewModel.class);
+
+        updateUi();
     }
 
 
