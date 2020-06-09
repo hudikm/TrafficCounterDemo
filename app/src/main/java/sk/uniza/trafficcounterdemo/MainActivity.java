@@ -15,24 +15,6 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    // No. of cars going in up lane
-    private Integer carUp = 0;
-
-    // No. of vans going in up lane
-    private Integer vanUp = 0;
-
-    // No. of trucks going in up lane
-    private Integer truckUp = 0;
-
-    // No. of cars going in down lane
-    private Integer carDown = 0;
-
-    // No. of vans going in down lane
-    private Integer vanDown = 0;
-
-    // No. of trucks going in down lane
-    private Integer truckDown = 0;
-
     private TextView laneUpCat1;
     private TextView laneUpCat2;
     private TextView laneUpCat3;
