@@ -92,25 +92,37 @@ public class MainActivity extends AppCompatActivity {
 
         switch (btn.getId()) {
             case R.id.carDownBtn:
-                trafficCounterViewModel.carDown++;
+                Integer carDown =
+                        trafficCounterViewModel.carDown.getValue();
+                trafficCounterViewModel.carDown.setValue(++carDown);
                 break;
             case R.id.vanDownBtn:
-                trafficCounterViewModel.vanDown++;
+                Integer vanDown =
+                        trafficCounterViewModel.vanDown.getValue();
+                trafficCounterViewModel.vanDown.setValue(++vanDown);
                 break;
             case R.id.truckDownBtn:
-                trafficCounterViewModel.truckDown++;
+                Integer truckDown =
+                        trafficCounterViewModel.truckDown.getValue();
+                trafficCounterViewModel.truckDown.setValue(++truckDown);
                 break;
             case R.id.carUpBtn:
-                trafficCounterViewModel.carUp++;
+                Integer carUp =
+                        trafficCounterViewModel.carUp.getValue();
+                trafficCounterViewModel.carUp.setValue(++carUp);
                 break;
             case R.id.vanUpBtn:
-                trafficCounterViewModel.vanUp++;
+                Integer vanUp =
+                        trafficCounterViewModel.vanUp.getValue();
+                trafficCounterViewModel.vanUp.setValue(++vanUp);
                 break;
             case R.id.truckUpBtn:
-                trafficCounterViewModel.truckUp++;
+                Integer truckUp =
+                        trafficCounterViewModel.truckUp.getValue();
+                trafficCounterViewModel.truckUp.setValue(++truckUp);
                 break;
         }
-        updateUi();
+        // Remove this line: updateUi();
     }
 
     private void updateUi() {
