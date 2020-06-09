@@ -7,6 +7,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -38,9 +39,52 @@ public class MainActivity extends AppCompatActivity {
         laneDownCat3 = findViewById(R.id.laneDownCat3);
         trafficCounterViewModel =
                 new ViewModelProvider(this)
-                .get(TrafficCounterViewModel.class);
+                        .get(TrafficCounterViewModel.class);
 
-        updateUi();
+
+        trafficCounterViewModel.carDown.observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                laneDownCat1.setText(integer.toString());
+            }
+        });
+
+        trafficCounterViewModel.vanDown.observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                laneDownCat2.setText(integer.toString());
+            }
+        });
+
+        trafficCounterViewModel.truckDown.observe(this,
+                new Observer<Integer>() {
+                    @Override
+                    public void onChanged(Integer integer) {
+                        laneDownCat3.setText(integer.toString());
+                    }
+                });
+
+        trafficCounterViewModel.carUp.observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                laneUpCat1.setText(integer.toString());
+            }
+        });
+
+        trafficCounterViewModel.vanUp.observe(this, new Observer<Integer>() {
+            @Override
+            public void onChanged(Integer integer) {
+                laneUpCat2.setText(integer.toString());
+            }
+        });
+
+        trafficCounterViewModel.truckUp.observe(this,
+                new Observer<Integer>() {
+                    @Override
+                    public void onChanged(Integer integer) {
+                        laneUpCat3.setText(integer.toString());
+                    }
+                });
     }
 
 
@@ -70,13 +114,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateUi() {
-        laneDownCat1.setText(trafficCounterViewModel.carDown.toString());
-        laneDownCat2.setText(trafficCounterViewModel.vanDown.toString());
-        laneDownCat3.setText(trafficCounterViewModel.truckDown.toString());
-        
-        laneUpCat1.setText(trafficCounterViewModel.carUp.toString());
-        laneUpCat2.setText(trafficCounterViewModel.vanUp.toString());
-        laneUpCat3.setText(trafficCounterViewModel.truckUp.toString());
+
     }
 
 }
