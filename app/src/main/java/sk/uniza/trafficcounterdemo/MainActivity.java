@@ -48,35 +48,35 @@ public class MainActivity extends AppCompatActivity {
 
         switch (btn.getId()) {
             case R.id.carDownBtn:
-                carDown++;
+                trafficCounterViewModel.carDown++;
                 break;
             case R.id.vanDownBtn:
-                vanDown++;
+                trafficCounterViewModel.vanDown++;
                 break;
             case R.id.truckDownBtn:
-                truckDown++;
+                trafficCounterViewModel.truckDown++;
                 break;
             case R.id.carUpBtn:
-                carUp++;
+                trafficCounterViewModel.carUp++;
                 break;
             case R.id.vanUpBtn:
-                vanUp++;
+                trafficCounterViewModel.vanUp++;
                 break;
             case R.id.truckUpBtn:
-                truckUp++;
+                trafficCounterViewModel.truckUp++;
                 break;
         }
         updateUi();
     }
 
     private void updateUi() {
-        laneDownCat1.setText(carDown.toString());
-        laneDownCat2.setText(vanDown.toString());
-        laneDownCat3.setText(truckDown.toString());
+        laneDownCat1.setText(trafficCounterViewModel.carDown.toString());
+        laneDownCat2.setText(trafficCounterViewModel.vanDown.toString());
+        laneDownCat3.setText(trafficCounterViewModel.truckDown.toString());
         
-        laneUpCat1.setText(carUp.toString());
-        laneUpCat2.setText(vanUp.toString());
-        laneUpCat3.setText(truckUp.toString());
+        laneUpCat1.setText(trafficCounterViewModel.carUp.toString());
+        laneUpCat2.setText(trafficCounterViewModel.vanUp.toString());
+        laneUpCat3.setText(trafficCounterViewModel.truckUp.toString());
     }
 
 }
