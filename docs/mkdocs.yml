@@ -11,7 +11,7 @@ repo_url: "https://github.com/hudikm/TrafficCounterDemo.git"
 edit_uri: ""
 
 # Copyright
-copyright: Copyright &copy; 2016 - 2020 Martin Húdik
+copyright: Copyright &copy; 2020 Martin Húdik
 
 # Configuration
 theme:
@@ -62,10 +62,11 @@ extra_css:
       
 # Customization
 extra:
+  disqus: 'trafficcounterdemo'
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/squidfunk
-  disqus: martinhudik
+  
 
 # Extensions
 markdown_extensions:
@@ -109,6 +110,6 @@ markdown_extensions:
 nav:
   - Tutorial: index.md
 
-# google_analytics:
-# - UA-165560005-1
-# - auto
+google_analytics:
+  - UA-165560005-2
+  - auto

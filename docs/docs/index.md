@@ -36,7 +36,7 @@ The [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/Vie
 #### 1.0 Basic functionality [:link:](https://github.com/hudikm/TrafficCounterDemo/commit/afaa7056d0c65ceda8092be575807b9205becdbe/)
 <!--end-->
 
-Start of this project on [github](https://github.com/hudikm/TrafficCounterDemo/tree/gh-pages).
+Start of this project on [github](https://github.com/hudikm/TrafficCounterDemo).
 
 Traffic-Counter is a very simple app with buttons that modify counts of cars going in lane 1 or lane 2. The finished app has a bug; After the phone rotation, your traffic counts  will inexplicably disappear. This behaviour occur because of the phenomenon called ["configuration changes"](https://developer.android.com/guide/topics/manifest/activity-element.html#config). When you rotate your phone Android OS need to redraw application screen and this is done by simply restarting the whole application. As you can see in code in step 1.0: after restarting the application all variables will be set back to zero.
 
@@ -791,3 +791,24 @@ At this point the basic application is finished and you can test it.
 
 
 <!--end-->
+
+<div id="disqus_thread"></div>
+<script>
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://trafficcounterdemo.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
