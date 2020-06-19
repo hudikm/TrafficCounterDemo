@@ -1,6 +1,6 @@
 # Project information
 site_name: "ViewModel: A Simple Example"
-site_url: https://squidfunk.github.io/mkdocs-material/
+site_url: https://hudikm.github.io/TrafficCounterDemo/
 site_author: Martin Húdik
 site_description: >-
   Tutorial created by Tutorial maker
@@ -65,6 +65,7 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/squidfunk
+  disqus: martinhudik
 
 # Extensions
 markdown_extensions:

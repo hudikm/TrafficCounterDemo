@@ -1,7 +1,7 @@
 # ViewModel: A Simple Example
 
-!!! Note "Step-by-step tutorial"
-	**This example demonstrates use of Tutorial maker.**
+!!! tip "**This simple step-by-step tutorial is an example of use of the [tutorial maker tools](https://github.com/hudikm/PatchCreator).**"
+	
 
 <!--tgen file='/home/martin/AndroidStudioProjects/TrafficCounterDemo/out.patch' lang=java tabs t_new="New" t_old="Old" -->
 
@@ -36,7 +36,9 @@ The [`ViewModel`](https://developer.android.com/reference/androidx/lifecycle/Vie
 #### 1.0 Basic functionality [:link:](https://github.com/hudikm/TrafficCounterDemo/commit/afaa7056d0c65ceda8092be575807b9205becdbe/)
 <!--end-->
 
-Traffic-Counter is a very simple app with buttons that modify cars going in lane 1 or lane 2. The finished app has a bug; After the phone rotation, your traffic counts  will inexplicably disappear. This behaviour occur because of the phenomenon called ["configuration changes"](https://developer.android.com/guide/topics/manifest/activity-element.html#config). When you rotate your phone Android OS need to redraw application screen and this is done by simply restarting the whole application. As you can see in code in step 1.0 after restarting the application all variables will be set back to zero.
+Start of this project on [github](https://github.com/hudikm/TrafficCounterDemo/tree/gh-pages).
+
+Traffic-Counter is a very simple app with buttons that modify counts of cars going in lane 1 or lane 2. The finished app has a bug; After the phone rotation, your traffic counts  will inexplicably disappear. This behaviour occur because of the phenomenon called ["configuration changes"](https://developer.android.com/guide/topics/manifest/activity-element.html#config). When you rotate your phone Android OS need to redraw application screen and this is done by simply restarting the whole application. As you can see in code in step 1.0: after restarting the application all variables will be set back to zero.
 
 
 
@@ -45,7 +47,7 @@ Traffic-Counter is a very simple app with buttons that modify cars going in lane
 <!--tgen step=1.0 template='mkdocs_body_only'  -->
 
 >  **[🖹](https://github.com/hudikm/TrafficCounterDemo/blob/afaa7056d0c65ceda8092be575807b9205becdbe/app/src/main/java/sk/uniza/trafficcounterdemo/MainActivity.java) app/src/main/java/sk/uniza/trafficcounterdemo/MainActivity.java**
-                                                                    
+
 ``` java tab="New" hl_lines="4 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 37 38 39 40 41 42 43 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81"
 import android.view.View;
 import android.view.Menu;
@@ -150,12 +152,11 @@ public class MainActivity extends AppCompatActivity {
 
 ```
 
-
 <!--end-->
 
-### ViewModel overview
-
 <br/>
+
+### ViewModel overview
 
 **Dealing with the problem of restarting the application**
 
@@ -216,7 +217,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView laneUpCat3;
 
 ```
-                  
+
 ``` java tab="Old" hl_lines="3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20"
 public class MainActivity extends AppCompatActivity {
 
@@ -245,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 >  **[🖹](https://github.com/hudikm/TrafficCounterDemo/blob/292eb1719d3d34aac984285fd468b6b41701abe6/app/src/main/java/sk/uniza/trafficcounterdemo/TrafficCounterViewModel.java) app/src/main/java/sk/uniza/trafficcounterdemo/TrafficCounterViewModel.java**
-                       
+
 ``` java tab="New" hl_lines="1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23"
 package sk.uniza.trafficcounterdemo;
 
@@ -286,7 +287,7 @@ public class TrafficCounterViewModel extends ViewModel {
 <!--tgen step=1.2 template='mkdocs_body_only'  -->
 
 >  **[🖹](https://github.com/hudikm/TrafficCounterDemo/blob/24a1de18d28242f0e0e6a1c69d47661ca0f234ae/app/build.gradle) app/build.gradle**
- 
+
  > dependencies {
 
 ``` java tab="New" hl_lines="4"
@@ -318,7 +319,7 @@ public class TrafficCounterViewModel extends ViewModel {
 <!--tgen step=1.3 template='mkdocs_body_only'  -->
 
 >  **[🖹](https://github.com/hudikm/TrafficCounterDemo/blob/7cad36cd8aa245295c4c64ac03a3243c85128fd0/app/src/main/java/sk/uniza/trafficcounterdemo/MainActivity.java) app/src/main/java/sk/uniza/trafficcounterdemo/MainActivity.java**
-  
+
 ``` java tab="New" hl_lines="3 4"
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -338,7 +339,7 @@ import android.view.View;
 import android.view.Menu;
 
 ```
- 
+
 ``` java tab="New" hl_lines="4"
     private TextView laneDownCat1;
     private TextView laneDownCat2;
@@ -359,7 +360,7 @@ import android.view.Menu;
     protected void onCreate(Bundle savedInstanceState) {
 
 ```
-     
+
  > protected void onCreate(Bundle savedInstanceState) {
 
 ``` java tab="New" hl_lines="4 5 6 7 8"
@@ -399,7 +400,7 @@ import android.view.Menu;
 <!--tgen step=1.4 template='mkdocs_body_only'  -->
 
 >  **[🖹](https://github.com/hudikm/TrafficCounterDemo/blob/997dcbf7bd556fbdd8580909f4a6892adb79babe/app/src/main/java/sk/uniza/trafficcounterdemo/MainActivity.java) app/src/main/java/sk/uniza/trafficcounterdemo/MainActivity.java**
-            
+
  > public void onBtnClick(View btn) {
 
 ``` java tab="New" hl_lines="3 6 9 12 15 18 25 26 27 29 30 31"
@@ -439,7 +440,7 @@ import android.view.Menu;
 }
 
 ```
-            
+
 ``` java tab="Old" hl_lines="3 6 9 12 15 18 25 26 27 29 30 31"
         switch (btn.getId()) {
             case R.id.carDownBtn:
@@ -483,7 +484,7 @@ import android.view.Menu;
 
 <br/>
 
-!!! note "At this point you can try to run the application and see how it works"
+!!! info "At this point you can try to *run* the application and see how it works"
 
 
 
@@ -511,7 +512,7 @@ Follow these steps to work with [`LiveData`](https://developer.android.com/refer
 <!--tgen step=2.0 template='mkdocs_body_only'  -->
 
 >  **[🖹](https://github.com/hudikm/TrafficCounterDemo/blob/1f5ad8a2cb4932e6d639c546b9fddb6f43b3c047/app/src/main/java/sk/uniza/trafficcounterdemo/TrafficCounterViewModel.java) app/src/main/java/sk/uniza/trafficcounterdemo/TrafficCounterViewModel.java**
-        
+
 ``` java tab="New" hl_lines="3 8 11 14 17 20 23 24"
 package sk.uniza.trafficcounterdemo;
 
@@ -540,7 +541,7 @@ public class TrafficCounterViewModel extends ViewModel {
 }
 
 ```
-      
+
 ``` java tab="Old" hl_lines="7 10 13 16 19 22"
 package sk.uniza.trafficcounterdemo;
 
@@ -580,7 +581,7 @@ public class TrafficCounterViewModel extends ViewModel {
 <!--tgen step=2.1 template='mkdocs_body_only'  -->
 
 >  **[🖹](https://github.com/hudikm/TrafficCounterDemo/blob/e92ab48512a1710ef33ba52ce365cf3519b6fbcd/app/src/main/java/sk/uniza/trafficcounterdemo/MainActivity.java) app/src/main/java/sk/uniza/trafficcounterdemo/MainActivity.java**
- 
+
 ``` java tab="New" hl_lines="3"
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -599,7 +600,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 
 ```
-                                             
+
  > protected void onCreate(Bundle savedInstanceState) {
 
 ``` java tab="New" hl_lines="4 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49"
@@ -657,7 +658,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 
 ```
-  
+
 ``` java tab="Old" hl_lines="4 6"
         laneDownCat3 = findViewById(R.id.laneDownCat3);
         trafficCounterViewModel =
@@ -670,7 +671,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 
 ```
- 
+
  > public void onBtnClick(View btn) {
 
 ``` java tab="New" hl_lines="4"
@@ -683,7 +684,7 @@ import androidx.lifecycle.ViewModelProviders;
 }
 
 ```
-       
+
 ``` java tab="Old" hl_lines="4 5 6 7 8 9 10"
     }
 
@@ -713,7 +714,7 @@ import androidx.lifecycle.ViewModelProviders;
 <!--tgen step=2.2 template='mkdocs_body_only'  -->
 
 >  **[🖹](https://github.com/hudikm/TrafficCounterDemo/blob/ec0dfe6fd95a74495af8a22a1ae217636d0a53ee/app/src/main/java/sk/uniza/trafficcounterdemo/MainActivity.java) app/src/main/java/sk/uniza/trafficcounterdemo/MainActivity.java**
-                   
+
  > public void onBtnClick(View btn) {
 
 ``` java tab="New" hl_lines="3 4 5 8 9 10 13 14 15 18 19 20 23 24 25 28 29 30 33"
@@ -755,7 +756,7 @@ import androidx.lifecycle.ViewModelProviders;
     private void updateUi() {
 
 ```
-       
+
 ``` java tab="Old" hl_lines="3 6 9 12 15 18 21"
         switch (btn.getId()) {
             case R.id.carDownBtn:
@@ -784,10 +785,9 @@ import androidx.lifecycle.ViewModelProviders;
 
 ```
 
-
 <!--end-->
 
-
+At this point the basic application is finished and you can test it. 
 
 
 <!--end-->
